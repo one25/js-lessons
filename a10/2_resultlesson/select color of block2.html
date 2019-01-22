@@ -1,0 +1,78 @@
+<html>
+<head>
+  <title>Untitled</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+#div1 {
+position:absolute;
+width:50px;
+height:50px;
+top:0px;
+left:0px;
+background-color:red;
+}
+#div2 {
+position:absolute;
+width:50px;
+height:50px;
+top:50px;
+left:0px;
+background-color:green;
+}
+#div3 {
+position:absolute;
+width:50px;
+height:50px;
+top:0px;
+left:50px;
+background-color:blue;
+}
+#div4 {
+position:absolute;
+width:50px;
+height:50px;
+top:50px;
+left:50px;
+background-color:gold;
+}
+#div_res {
+width:50px;
+height:50px;
+margin-top:50px;
+margin-left:40px;
+border:1px solid black;
+}
+</style>
+</head>
+<body>
+Щелкните на "окрашенный" квадратик, потом на "пустой" квадратик и он "получит" этот цвет.
+<div style="width:100px; height:100px; position:relative; margin-left:15px;">
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+</div>
+<div id="div_res"></div>
+
+<script>
+var color_select;
+/*
+function color_sel(elem) {
+   color_select=elem.getAttribute('style');
+}
+function color_res(elem) {
+   elem.setAttribute('style', color_select);
+}
+*/
+$(document).ready(function() {
+   $("#div1, #div2, #div3, #div4").click(function(){
+      color_select=$(this).css("background-color");
+   });
+   $("#div_res").click(function(){
+      $(this).css("background-color", color_select);
+   });
+});
+</script>
+</body>
+</html>

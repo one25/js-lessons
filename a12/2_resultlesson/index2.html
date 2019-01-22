@@ -1,0 +1,58 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+<style>
+a {
+font-size:25px;
+font-weight:bolder;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+//iife - "НЕМЕДЛЕННО ВЫПОЛНЯЕМЫЕ" ФУНКЦИИ, ПАТТЕРН "МОДЕЛЬ"
+/* Вариант 1
+var BaseRecord=(function(){
+$(document).ready(function(){
+   $("a").click(function(){
+      $("a").css("background-color", "white");
+      //$(this).css("background-color", "red");
+      BaseRecord.color(this);
+      return false;
+   });
+});
+return {
+   color:function(el){$(el).css("background-color", "red");},
+}
+})();
+*/
+/* Вариант 2 */
+var BaseRecord=(function(){
+$(document).ready(function(){
+   $("a").click(function(){
+      $("a").css("background-color", "white");
+      //$(this).css("background-color", "red");
+      //BaseRecord.color(this);
+      BaseRecord.elem=this;
+      BaseRecord.color();
+      return false;
+   });
+});
+return {
+   elem:null,
+   //color:function(el){$(el).css("background-color", "red");},
+   color:function(){$(this.elem).css("background-color", "red");},
+}
+})();
+
+
+</script>
+
+<a href="#">link1</a>
+<br><a href="#">link2</a>
+<br><a href="#">link3</a>
+
+</body>
+</html>

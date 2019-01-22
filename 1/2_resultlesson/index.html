@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+  <title>Untitled</title>
+
+<script>
+
+</script>
+
+</head>
+
+<body>
+
+<script>
+function func_size() {
+   for(var i=1; i<=3; ++i) {
+      document.getElementById("abz"+i).style.fontSize=i+"0px";
+   }
+}
+function func_hello() {
+   hello1.innerText="<b>Hello</b>";
+   hello2.innerHTML="<b>Hello</b>";
+   button.innerHTML='<input type="button" value="Button" id="b" onclick="b.style.backgroundColor=\'gold\'" />';
+}
+</script>
+
+<p id="abz1">Abzac 1</p>
+<p id="abz2">Abzac 2</p>
+<p id="abz3">Abzac 3</p>
+
+<a href="#" onclick="func_size();return false;">func_size</a>
+
+<p id="hello1"></p>
+<p id="hello2"></p>
+<div id="button"></div>
+
+<a href="#" onclick="func_hello();return false;">func_hello</a>
+
+<script>
+//abz1.style.color="red";
+document.getElementById("abz1").style.color="red";
+</script>
+
+</body>
+
+</html>

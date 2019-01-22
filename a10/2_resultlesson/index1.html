@@ -1,0 +1,60 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+<!-- 1.ПОДКЛЮЧЕНИЕ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+<script>
+//abz1.style.color="red";
+$(document).ready(function(){
+   $(".link1").click(function(){
+      $("#abz2").css("color", "red").css("font-size", "25px");
+      return false;
+   });
+   $(".link1").mouseover(function(){
+      $("#abz2").css("font-weight", "bold");
+   });
+});
+</script>
+
+<!-- 2.ДОСТУП К ЭЛЕМЕНТАМ -->
+<p id="abz1">Абзац abz1</p>
+<p id="abz2">Абзац abz2</p>
+
+<script>
+//abz1.style.color="red";
+//$("#abz2").css("color", "red");
+</script>
+
+<p class="cl1">Абзац cl1<span>Span в абзаце cl1</span></p>
+<span class="cl1">Span cl1</span>
+<br><a href="#">link #</a>
+<br><a href="http://google.com">link google.com</a>
+<br><input type="text" size="30">
+<input type="button" value="Ok">
+<br><a href="#" onclick="$('#abz1').css('background-color','gold');return false;">Изменить фон id</a>
+<br><a href="#" onclick="$('p').css('background-color','gold');return false;">Изменить фон tag</a>
+<br><a href="#" onclick="$('.cl1').css('background-color','gold');return false;">Изменить фон class</a>
+<br><a href="#" onclick="$('p.cl1').css('background-color','gold');return false;">Изменить фон tag of class</a>
+<br><a href="#" onclick="$('p span').css('background-color','gold');return false;">Изменить фон tag in tag</a>
+<br><a href="#" onclick="$('[href]').css('background-color','gold');return false;">Изменить фон attribute</a>
+<br><a href="#" onclick="$('[href=\'#\']').css('background-color','gold');return false;">Изменить фон label of attribute</a>
+<br><a href="#" onclick="$(':input').css('background-color','gold');return false;">Изменить фон input</a>
+<br><a href="#" onclick="$('input').css('background-color','gold');return false;">Изменить фон input again</a>
+<br><a href="#" onclick="$(':button').css('background-color','gold');return false;">Изменить фон button</a>
+<br><a href="#" onclick="$('[type=\'button\']').css('background-color','gold');return false;">Изменить фон button again</a>
+<br><a href="#" onclick="$(this).css('background-color','gold');return false;">Изменить фон this</a>
+
+<!-- 3."ОТЛОЖЕННОЕ ВЫПОЛНЕНИЕ" СОБЫТИЯ - $(document).ready(function() {...}); -->
+<script>
+
+</script>
+
+<!-- 4.НАВЕС СОБЫТИЙ (1-й - "ПРЯМОЙ ВАРИАНТ") -->
+<!-- 5.ЦЕПОЧКИ -->
+<br><br><a href="#" class="link1">"Прямой" навес события - 1ink 1</a>
+
+</body>
+</html>

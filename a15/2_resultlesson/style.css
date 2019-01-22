@@ -1,0 +1,39 @@
+body, html {
+
+}
+
+.container_left {
+float:left;
+width:35%;
+}
+
+.container_right {
+margin-left:50px;
+float:left;
+}
+
+.form {
+
+}
+
+.table {
+margin-top:10px;
+}
+
+.select_start {
+width:250px;
+}
+
+td {
+background-color:whitesmoke;
+border:1px solid blue;
+}
+
+.span_error {
+color:red;
+font-weight:bolder;
+}
+
+.link_insert {
+font-weight:bolder; 
+}

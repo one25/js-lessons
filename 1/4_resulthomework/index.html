@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+  <title>Untitled</title>
+<style>
+.enter {
+width: 200px;
+height: 100px;
+border: 1px solid green;
+background-color: lavender;
+margin-top: 10px;
+color: black;
+font-weight: bolder;
+}
+</style>
+</head>
+
+<body>
+<form name="forma1">
+<input type="text" name="text1">
+<input type="button" value="Enter" onclick="func_enter(text1.value);">
+</form>
+<div id="enter" class="enter"></div>
+
+<script>
+function func_enter(value) {
+if(value=="") {
+   enter.innerHTML="The field shouldn't be empty!";
+   enter.style.color="red";
+   enter.style.border="1px solid red";
+}
+else {
+   enter.innerHTML=value;
+   enter.style.color="green";
+   enter.style.border="1px solid green";
+}
+}
+</script>
+
+</body>
+
+</html>

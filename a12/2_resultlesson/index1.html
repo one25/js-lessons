@@ -1,0 +1,130 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+<style>
+.myauto, .result {
+font-size:20px;
+font-weight:bolder;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<span class="myauto"></span>
+
+<script>
+//1.ООП - ОБЪЕКТ, СВОЙСТВА, МЕТОДЫ, УКАЗАТЕЛИ("ВНЕШНИЙ" И "ВНУТРЕННИЙ"(this))
+/*1.1
+var mycar={
+   marka:"VW",
+   model:"Polo",
+   name:function() {alert(this.marka+" "+this.model);},
+};
+mycar.name();
+if(mycar.marka=="VW") {alert("This car was made in Germany...");}
+*/
+/*1.2
+var mycar={
+   marka:"VW",
+   model:"Polo",
+   //name:function() {alert(this.marka+" "+this.model);},
+};
+var action='html'; //var action='alert'; or var action='html';
+if(action=='alert') {
+mycar.name=function() {alert(mycar.marka+" "+mycar.model);} //ИЛИ ТАК...
+}
+else if(action=='html') {
+mycar.name=function() {$(".myauto").html(mycar.marka+" "+mycar.model);}
+}
+//mycar.name=function() {alert(this.marka+" "+this.model);} //ИЛИ ТАК...
+mycar.name();
+if(mycar.marka=="VW") {alert("This car was made in Germany...");}
+*/
+/*1.3
+var mycar={
+   //marka:"VW",
+   //model:"Polo",
+   //name:function() {alert(this.marka+" "+this.model);},
+};
+var country='Italy'; //var country='Germany'; or var country='Italy';
+if(country=='Germany') {
+   mycar.marka="VW";
+   mycar.model="Polo";
+}
+else if(country=='Italy') {
+   mycar.marka="Fiat";
+   mycar.model="Uno";
+}
+var action='html'; //var action='alert'; or var action='html';
+if(action=='alert') {
+   mycar.name=function() {alert(mycar.marka+" "+mycar.model);} //ИЛИ ТАК...
+}
+else if(action=='html') {
+   mycar.name=function() {$(".myauto").html(mycar.marka+" "+mycar.model);}
+}
+//mycar.name=function() {alert(this.marka+" "+this.model);} //ИЛИ ТАК...
+mycar.name();
+if(mycar.marka=="VW") {alert("This car was made in Germany...");}
+*/
+/*1.4
+var mycar={
+   //marka:"VW",
+   //model:"Polo",
+   //name:function() {alert(this.marka+" "+this.model);},
+};
+
+//var country='Italy'; //var country='Germany'; or var country='Italy';
+//if(country=='Germany') {
+//   mycar.marka="VW";
+//   mycar.model="Polo";
+//}
+//else if(country=='Italy') {
+//   mycar.marka="Fiat";
+//   mycar.model="Uno";
+//}
+
+var action='html'; //var action='alert'; or var action='html';
+if(action=='alert') {
+   mycar.name=function(mr, md) {mycar.marka=mr; mycar.model=md; alert(mycar.marka+" "+mycar.model);} //ИЛИ ТАК...
+}
+else if(action=='html') {
+   mycar.name=function(mr, md) {mycar.marka=mr; mycar.model=md; $(".myauto").html(mycar.marka+" "+mycar.model);}
+}
+//mycar.name=function() {alert(this.marka+" "+this.model);} //ИЛИ ТАК...
+mycar.name('Renault', 'Clio');
+if(mycar.marka=="VW") {alert("This car was made in Germany...");}
+*/
+
+//2.ПРАКТИЧЕСКИЙ ПРИМЕР-1
+var mycar={
+   name:function(){$(".result").html(this.marka+" "+this.model)},
+}
+$(document).ready(function(){
+   $("body").on("change", "select", function(){
+       if(form_auto.select_auto.selectedIndex!=0) {
+          mycar.marka=form_auto.select_auto.options[form_auto.select_auto.selectedIndex].value;
+          mycar.model=form_auto.select_auto.options[form_auto.select_auto.selectedIndex].text;
+       }
+       else {
+          mycar.marka="";
+          mycar.model="";
+       }
+       mycar.name();
+   });
+});
+
+
+</script>
+
+<form name="form_auto">
+<select name="select_auto">
+<option>Select---</option>
+<option value="VW">Polo</option>
+<option value="Fiat">Uno</option>
+<option value="Renault">Clio</option>
+</select>
+</form>
+<span class="result"></span>
+
+</body>
+</html>

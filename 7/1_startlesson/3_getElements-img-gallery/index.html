@@ -1,0 +1,46 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />    
+<script>
+var arr=new Array("pear.jpg", "cherry.jpg", "raspberry.jpg", "strawberry.jpg");
+var i=0;
+function nextImage(el) {
+i++;
+if(i==arr.length) {i=0;}
+document.images[el].src=arr[i];
+}
+
+</script>
+<style>
+#div_img {
+display:block;
+}
+.img_big {
+width:200px;
+height:180px;
+}
+.img_litle {
+width:50px;
+height:50px;
+}
+</style>
+</head>
+<body>
+
+<img src="pear.jpg" alt name="imm" class="img_big" onclick="nextImage('imm');" />
+
+<div id="div_img">
+<img src="pear.jpg" class="img_litle" alt />
+<img src="cherry.jpg" class="img_litle" alt />
+<img src="raspberry.jpg" class="img_litle" alt />
+<img src="strawberry.jpg" class="img_litle" alt />
+</div>
+
+<script>
+
+
+
+</script>
+
+</body>
+</html>

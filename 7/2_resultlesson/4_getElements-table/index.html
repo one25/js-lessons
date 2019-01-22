@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+<script>
+function func_table() {
+var arr_span=document.getElementById("things").getElementsByTagName("span");
+var arr_inner=new Array();
+for(var i=0; i<arr_span.length; ++i) {
+   arr_inner[i]=arr_span[i].innerHTML;
+}
+var el_tbody=document.getElementById("tbody");
+for(var i=0; i<arr_inner.length; ++i) {
+   var el_tr=document.createElement("tr");
+   el_tr.innerHTML="<td>"+arr_inner[i]+"</td>";
+   el_tbody.appendChild(el_tr);
+}
+}
+
+</script>
+<style>
+td{
+background-color:whitesmoke;border:1px solid blue;
+}
+
+</style>
+</head>
+<body>
+
+<div id="things">
+<span>Computers</span>
+<span>Printers</span>
+<span>Audio-video</span>
+</div>
+
+<a href="#" onclick="func_table();return false;">func_table</a>
+
+<table>
+<tbody>
+<tr><td style="background-color:silver;font-weight:bold;text-align:center;">PRODUCTS</td></tr>
+</tbody>
+<tbody id="tbody">
+</tbody>
+</table>
+
+<script>
+
+
+
+</script>
+
+</body>
+</html>
